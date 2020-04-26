@@ -23,7 +23,7 @@ import blog
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    path(r'job/',include('jobs.urls')),
+    path(r'',include('jobs.urls')),
     path(r'blog/', include('blog.urls'))
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
