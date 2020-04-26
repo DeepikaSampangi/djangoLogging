@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'dsam_portfolio.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'portfoliodb',
+        'NAME': 'myportfolio',
         'USER': 'postgres',
         'PASSWORD': '',
         'HOST':'localhost',

@@ -4,4 +4,11 @@ venv/
 
 db.sqlite3
 
+*.pyc
 __pycache__/
+
+
+
+/static
+
+imgs/
