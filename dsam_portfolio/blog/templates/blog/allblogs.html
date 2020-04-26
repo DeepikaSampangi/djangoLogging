@@ -64,7 +64,7 @@
                     <a class="nav-link" href="#">Event Organizer</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Blog</a>
+                    <a class="nav-link active" href="#">Blog</a>
                 </li>
             </ul>
         </div>
@@ -75,30 +75,25 @@
 
     <section class="jumbotron text-center">
         <div class="container">
-            <h1>Hey, Deepika Sampangi Here!</h1>
+            <h1>Deepika Sampangi</h1>
             <p class="lead text-muted">Unveiling the secrets of life on the path to discover the meaning of life</p>
-            <p>
-                <a href="#" class="btn btn-primary my-2">Tech</a>
-                <a href="#" class="btn btn-primary my-2">Blog</a>
-                <a href="#" class="btn btn-primary my-2">Books</a>
-            </p>
         </div>
     </section>
 
     <div class="album py-5 bg-light">
         <div class="container">
             <div class="row">
-                {% for job in jobs.all%}
+                {% for blog in blogs.all%}
                 <div class="col-md-4">
                     <div class="card mb-4 shadow-sm">
-                        <img class="card-img-top" src="{{ job.job_img.url }}" height="200" width="200"/>
+                        <img class="card-img-top" src="{{ blog.blog_img.url }}" height="200" width="200"/>
                         <div class="card-body">
-                            <p class="card-text">{{ job.job_name }}</p>
+                            <p class="card-text">{{ blog.blog_title }}</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
                                     <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
                                 </div>
-                                <small class="text-muted">9 mins</small>
+                                <small class="text-muted">{{blog.blog_date_pretty}}</small>
                             </div>
                         </div>
                     </div>
