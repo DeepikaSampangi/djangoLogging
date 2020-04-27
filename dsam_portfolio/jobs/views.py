@@ -9,4 +9,7 @@ def home(request):
 
 def job_details(request, job_id):
     detail_job = get_object_or_404(Job, pk=job_id)
-    return render(request, 'jobs/job_detail.html', {'detail_jobs':detail_job})
+    if detail_job.job_name == 'Blogger':
+        return render(request, 'blog/allblogs.html',{'blogs':None})
+    else:
+        return render(request, 'jobs/job_detail.html', {'detail_jobs':detail_job})

@@ -6,3 +6,5 @@ class Job(models.Model):
     job_img = models.ImageField(upload_to='imgs/')
     job_summary = models.CharField(max_length=512)
 
+class TechExp(models.Model):
+    techexp_name = models.CharField(max_length=256)

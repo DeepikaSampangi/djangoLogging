@@ -30,6 +30,12 @@
           font-size: 3.5rem;
         }
       }
+
+      section {
+       background-image:url("");
+       background-size:100% 100%;
+       background-repeat:no-repeat;
+      }
     </style>
 </head>
 <body>
@@ -58,9 +64,9 @@
 <main role="main">
 
     <section class="jumbotron text-center">
-        <div class="container">
+        <div class="position-relative overflow-hidden p-3 p-md-5 m-md-5 text-center">
             <h1>Hey, Deepika Sampangi Here!</h1>
-            <p class="lead text-muted">Unveiling the secrets of life on the path to discover the meaning of life</p>
+            <p>Unveiling the secrets of life on the path to discover the meaning of life</p>
         </div>
     </section>
 
@@ -69,14 +75,14 @@
             <div class="row">
                 {% for job in jobs.all%}
                 <div class="col-md-4">
-                    <div class="card mb-4 shadow-sm">
-                        <a href="{% url 'job_details' job.id %}">
-                        <img class="card-img-top" src="{{ job.job_img.url }}" height="200" width="200"/>
-                        <div class="card-body">
-                            <p class="card-text">{{ job.job_name }}</p>
+                    <a href="{% url 'job_details' job.id %}">
+                        <div class="card mb-4 shadow-sm">
+                            <img class="card-img-top" src="{{ job.job_img.url }}" height="200" width="200"/>
+                            <div class="card-body">
+                                    <p class="text-center">{{ job.job_name }}</p>
+                            </div>
                         </div>
-                        </a>
-                    </div>
+                    </a>
                 </div>
                 {%endfor%}
             </div>

@@ -35,7 +35,7 @@
 <body>
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Deepika Sampangi</a>
+        <a class="navbar-brand" href="{% url 'home' %}">Deepika Sampangi</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -56,26 +56,19 @@
 </header>
 
 <main role="main">
-
-    <section class="jumbotron text-center">
-        <div class="container">
-            <h1>Deepika Sampangi</h1>
-            <p class="lead text-muted">Unveiling the secrets of life on the path to discover the meaning of life</p>
+    <div class="text-center">
+        <h1>{{ detail_jobs.job_name }}</h1>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <img src="{{ detail_jobs.job_img.url }}" alt="" width="100%">
         </div>
-    </section>
-
-    <div class="album py-5 bg-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card mb-4 shadow-sm">
-                        <img class="card-img-top" src="{{ detail_jobs.job_img.url }}" height="200" width="200"/>
-                        <div class="card-body">
-                            <p class="card-text">{{ detail_jobs.job_name }}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="col-md-4">
+            <h5>About the project:</h5>
+            <p>{{ detail_jobs.job_summary }}</p>
+            <br>
+            <h5>Technology used:</h5>
+            <p>{{ detail_jobs.job_summary }}</p>
         </div>
     </div>
 
