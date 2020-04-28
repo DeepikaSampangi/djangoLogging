@@ -30,6 +30,12 @@
           font-size: 3.5rem;
         }
       }
+
+      section {
+       background-image:url("");
+       background-size:100% 100%;
+       background-repeat:no-repeat;
+      }
     </style>
 </head>
 <body>
@@ -47,7 +53,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="https://www.linkedin.com/in/deepikasampangi/">LinkedIn</a>
                 </li>
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="{% url 'blog_home' %}">Blog</a>
                 </li>
             </ul>
@@ -58,18 +64,30 @@
 <main role="main">
 
     <section class="jumbotron text-center">
-        <div class="container">
-            <img class="card-img-top" src="{{ detail_blog.blog_img.url }}" width="100%" height="50%"/>
+        <div class="position-relative overflow-hidden p-3 p-md-5 m-md-5 text-center">
+            <h1>Hey, Deepika Sampangi Here!</h1>
+            <p>Unveiling the secrets of life on the path to discover the meaning of life</p>
         </div>
     </section>
-    <div class="container">
-        <div class="text-center">
-            <section>
-                <p>{{detail_blog.blog_desc}}</p>
-            </section>
+
+    <div class="album py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                {% for job in jobs.all%}
+                <div class="col-md-4">
+                    <a href="{% url 'job_details' job.id %}">
+                        <div class="card mb-4 shadow-sm">
+                            <img class="card-img-top" src="{{ job.job_img.url }}" height="200" width="200"/>
+                            <div class="card-body">
+                                <p class="text-center">{{ job.job_name }}</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {%endfor%}
+            </div>
         </div>
     </div>
-
 
 </main>
 
@@ -83,7 +101,3 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 </html>
-
-
-
-
